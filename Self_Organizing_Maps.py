@@ -371,6 +371,7 @@ def Cortex_map(train_y, train_x, updated_som, max_epochs, metric='euclidian'):
     
     n_rows = updated_som.shape[0]
     n_cols = updated_som.shape[1]
+    #nn = np.linspace(1, n_rows, n_rows)
     nn = np.linspace(0, n_rows-1, n_rows)
         
     label_data = train_y
@@ -400,7 +401,7 @@ def Cortex_map(train_y, train_x, updated_som, max_epochs, metric='euclidian'):
             label_map[row][col] = label
 
     title = ('Final Cortex - Iteration ' + str(max_epochs))
-    s_title = ('Number of Neurons = ' + str(len(nn)))
+    s_title = ('Number of Neurons = ' + str(len(nn)**2))
     #cmap = colors.ListedColormap(['#440154', '#472d7b', '#3b528b', '#21908c','#5dc863','#fde725']) 
     plt.imshow(label_map, cmap='viridis') #cmap)
     #plt.colorbar()
